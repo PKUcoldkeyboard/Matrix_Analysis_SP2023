@@ -80,7 +80,7 @@ $$
 
   ⯎ 在报告中提供与重构矩阵相对应的前20幅重构的RGB脸部图像 $W H \in R^{K \times N}$ 。
 
-4）（可选）对于对NMF的聚类特性感兴趣的同学，可以将NMF应用于脑电信号数据聚类。关于脑电信号聚类的更多背景知识，请参考[这里](https://www.kaggle.com/code/joseguzman/spike-classification-based-on-waveforms/notebook)的Kaggle说明。如果可能，请给出聚类的可视化结果（或任何其他分析结果），其中数据集文件可以从'./dataset/ebs/waveform-5000.csv'中下载。(这是一道奖励题，如果其他测验的答案都正确，则不计入编程作业成绩)。
+4）（可选）对于对NMF的聚类特性感兴趣的同学，可以将NMF应用于脑电信号数据聚类。关于脑电信号聚类的更多背景知识，请参考[这里](https://www.kaggle.com/code/joseguzman/spike-classification-based-on-waveforms/notebook)的Kaggle说明。如果可能，请给出聚类的可视化结果（或任何其他分析结果），其中数据集文件可以从`./dataset/ebs/waveform-5000.csv`中下载。(这是一道奖励题，如果其他测验的答案都正确，则不计入编程作业成绩)。
 
 ## 许可证
 This project is licensed under the MIT License. See the LICENSE file for more information.
