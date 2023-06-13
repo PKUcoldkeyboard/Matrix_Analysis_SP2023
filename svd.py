@@ -12,6 +12,8 @@ def main():
     width, height = 64, 64
 
     U, S, V = np.linalg.svd(M, full_matrices=False)
+    
+    print("Singular values:", S[:d])
 
     # show images of column vectors of low-rank matrix U
     for i in range(d):
