@@ -34,7 +34,7 @@ $$
 
 Please show that the matrix sequence obtained by the QR algorithm { $A_k$ } converges to an upper trianglematrix for the above matrices. (15%)
 
-3）Please compute the eigenvalues and matrix 2-norm condition number (i.e. $cond_2 (𝐴) = \Vert 𝐴_2 \Vert \Vert 𝐴 \Vert_{2}^{-1}$ ) for each of the above matrices. (Please indicate how to calculate the matrix 2-norm condition number for each matrix and provide the results, 20%)
+3）Please compute the eigenvalues and matrix 2-norm condition number (i.e. $cond_2 (𝐴) = \Vert 𝐴 \Vert_2 \Vert 𝐴 \Vert_{2}^{-1}$ ) for each of the above matrices. (Please indicate how to calculate the matrix 2-norm condition number for each matrix and provide the results, 20%)
 
 ### 2. Matrix Factorization for Data Processing
 Due to the complexity and curse of dimensionality, directly processing the high-dimensional data requires a huge amount of computational resources. Non-negative matrix factorization (NMF) is proposed as a technique for dimension reduction, which has found significant applications in image processing. By employing NMF, the non-negative high-dimensional matrix can be decomposed into two non-negative lower-dimensional matrices, one comprises column vectors that can be regarded as basis vectors in the data space, and the other contains rows of coefficients that scale those basis vectors. Moreover, NMF also can be utilized for text data processing. We can examine each column within the coefficient matrix and identify the row number with the maximum coefficient, where the row number indicate the cluster ID of the respective column within the original matrix. Such clustering property means that NMF can be applied for data clustering.

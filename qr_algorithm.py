@@ -29,20 +29,29 @@ def run(matrix, tol=1e-10, max_iters=1000):
         next_matrix = R @ Q
 
         # Check Convergance
-        if np.allclose(cur_matrix, next_matrix, atol=tol):
-            return np.diag(cur_matrix)
+        if np.all(np.abs(next_matrix[np.triu_indices_from(next_matrix, k=-1)]) < tol):
+            cur_matrix = next_matrix
+            break
 
         cur_matrix = next_matrix
 
     print("Warning: Maximum iterations reached without converging.")
-    return np.diag(cur_matrix)
+    return cur_matrix
 
 
 if __name__ == "__main__":
-    A1 = np.loadtxt('../input/A1.txt')
-    A2 = np.loadtxt('../input/A2.txt')
-    A3 = np.load('../input/A3.npy')
+    A1 = np.loadtxt('./input/A1.txt')
+    A2 = np.loadtxt('./input/A2.txt')
+    A3 = np.load('./input/A3.npy')
 
-    print("Eigenvalues of A1: ", run(A1))
-    print("Eigenvalues of A2: ", run(A2))
-    print("Eigenvalues of A3: ", run(A3))
+    ret_A1 = run(A1)
+    ret_A2 = run(A2)
+    ret_A3 = run(A3)
+
+    np.set_printoptions(precision=10, suppress=True)
+    print("Result of A1: \n", ret_A1)
+    print("Result of A2: \n", ret_A2)
+    print("Result of A3: \n", ret_A3)
+    print("Result of A1: \n", np.diag(ret_A1))
+    print("Result of A2: \n", np.diag(ret_A2))
+    print("Result of A3: \n", np.diag(ret_A3))
