@@ -7,7 +7,7 @@ from combine import load_images, combine_images
 def main():
     images = load_images("./datasets/images")
     M = combine_images(images)
-
+    # experience parameter
     d = 16
     width, height = 64, 64
 
@@ -25,7 +25,7 @@ def main():
     S_d = S[:d]
     V_d = V[:d, :]
     M_d = U_d @ np.diag(S_d) @ V_d
-    
+
     N = int(M_d.shape[1] / 3)
     for i in range(20):
         r = M_d[:, i * 3].reshape(height, width)

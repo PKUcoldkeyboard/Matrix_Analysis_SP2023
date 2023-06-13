@@ -35,7 +35,7 @@ def run(matrix, tol=1e-10, max_iters=1000):
 
         cur_matrix = next_matrix
 
-    print("Warning: Maximum iterations reached without converging.")
+    print(f"ConvergenceWarning: Maximum number of iterations {max_iters} reached. Increase it to improve convergence.")
     return cur_matrix
 
 
