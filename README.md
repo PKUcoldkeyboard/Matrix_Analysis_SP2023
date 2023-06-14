@@ -2,7 +2,6 @@
 
 ![](https://img.shields.io/badge/release-v0.0.1-blue)
 ![](https://img.shields.io/badge/unit%20tests-passing-brightgreen)
-![](https://img.shields.io/badge/Eigen3-3.4.0-blueviolet)
 ![](https://img.shields.io/github/stars/PKUcoldkeyboard/Matrix_Analysis_SP2023?style=social)
 
 [English](README-en.md) | [简体中文](README.md)
