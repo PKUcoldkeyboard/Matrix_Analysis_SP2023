@@ -2,28 +2,27 @@ import os
 import numpy as np
 from PIL import Image
 
-
 def load_images(image_folder, size=(64, 64)):
     """
-    Load images and reshape them from a given folder.
+    Load and resize images from a specified folder.
 
     Parameters
     ----------
     image_folder : str
-        The folder where the images are stored.
+        Path to the directory containing images.
+    size : tuple of int, optional
+        The size to which all images will be resized (default is (64, 64)).
 
     Returns
     -------
-    list of PIL.Image
-        The list of images.
+    images : list of PIL.Image
+        List of resized images.
     """
     images = []
-
     for filename in os.listdir(image_folder):
         img = Image.open(os.path.join(image_folder, filename))
         img = img.resize(size)
         images.append(img)
-
     return images
 
 
@@ -34,27 +33,20 @@ def combine_images(images, K=4096):
     Parameters
     ----------
     images : list of PIL.Image
-        The list of images.
+        List of images.
+    K : int, optional
+        The number of pixels in the resulting image (default is 4096).
 
     Returns
     -------
-    np.ndarray
-        Matrix M with shape (K, 3N) - K = Width x Height, N = number of images.
+    M : np.ndarray
+        Matrix with shape (K, 3N), where K equals Width x Height, and N is the number of images.
     """
     images_matrix = []
-
     for img in images:
         img_array = np.array(img)
-
-        # Ensure the image has 3 channels
         assert img_array.shape[2] == 3, "Image does not have 3 channels."
-
-        # Split the image into R, G, B channels
         r, g, b = img_array[:, :, 0], img_array[:, :, 1], img_array[:, :, 2]
-
-        # Flatten the channels and append them to the images_matrix
         images_matrix.extend([r.flatten(), g.flatten(), b.flatten()])
-
     M = np.array(images_matrix).T
-
     return M
