@@ -1,2 +1,4 @@
 numpy==1.19.5
+pandas==1.1.5
 Pillow==8.4.0
+seaborn==0.11.2
